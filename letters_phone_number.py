@@ -17,7 +17,7 @@ class Solution:
 
 
     def letterCombinations(self, digits: str) -> List[str]:
-         """Returns all possible letter combinations of a sequence of numbers in
+        """Returns all possible letter combinations of a sequence of numbers in
          a phone dial.
 
         Args:
@@ -46,7 +46,6 @@ class Solution:
         num_combinations = reduce(lambda x, y: x * y, num_letters)
 
         for _ in range(num_combinations):
-
             # Add current combination (based on counter)
             combinations.append("".join([
                 self.letters[digit_list[i]][c] for i, c in enumerate(counter)]
@@ -54,7 +53,7 @@ class Solution:
 
             carry = False
 
-            for i, d in reversed(list(enumerate(counter))):
+            for i in reversed(range(num_digits)):
                 # Start at the last digit
                 if i == num_digits - 1:
                     if counter[i] < num_letters[i] - 1:
