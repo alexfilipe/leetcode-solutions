@@ -1,5 +1,13 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
+        """Returns converted zig-zagged string (explanation in file.)
+
+        Args:
+            s (str): original string.
+            numRows (int): number of rows to zig-zag.
+        Returns:
+            str: Zig-zagged version of string.
+        """
 
         # Return string if number of rows is one (bugfix)
         if numRows == 1:
