@@ -32,9 +32,6 @@ class Solution:
         # Last remainder
         remainder = num
 
-        # Dict representing whole numbers of
-        divisions = dict.fromkeys(self.values)
-
         # Initial string
         roman = ""
 
@@ -43,10 +40,8 @@ class Solution:
             division = remainder // v
             remainder = remainder % v
 
-            divisions[v] = division
-
             # Adds to the string only if division is not empty.
-            if divisions[v] != 0:
-                roman += self.symbols[v] * divisions[v]
+            if division != 0:
+                roman += self.symbols[v] * division
 
         return roman
